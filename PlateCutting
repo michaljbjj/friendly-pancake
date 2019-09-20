@@ -19,7 +19,7 @@ public static void main(String []args) {
 	n=in.nextInt();
 	
 	size=m*n; 
-	System.out.println("rozmiar blachy wynois "+ size);
+	System.out.println("rozmiar blachy wynosi "+ size);
 	
 	int[]x=new int[m-1];
 	int[]y=new int[n-1];
