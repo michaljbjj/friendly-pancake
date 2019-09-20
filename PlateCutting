@@ -35,34 +35,37 @@ public static void main(String []args) {
 		y[i]=in.nextInt();
 	}
 	
-for(int f=0;f<=6;f++) { 		
+for(int f=0;f<=x.length+y.length;f++) { 		
 	for (int i = 0; i < x.length; i++) {
         if (x[i] >= maxx) {
             maxx = x[i];
         }
     }
+	for (int i = 0; i < y.length; i++) {
+        if (y[i] >= maxy) {
+            maxy = y[i];
+        }
+	}
+	if(maxx>maxy) {
 	for (int i = 0; i < x.length; i++) {
         if (maxx==x[i]) {
             x[i]=0;
             break;
         }
 	}
-	for (int i = 0; i < y.length; i++) {
-        if (y[i] >= maxy) {
-            maxy = y[i];
-        }
 	}
+	if(maxy>=maxx) {
       for (int i = 0; i < y.length; i++) {
          if (y[i]==maxy) {
               y[i]=0;
+              break;
           }
       }  
+	}
     
 	if(maxx>maxy&&maxy>0) {
 	koszt=koszt+maxx*zmiennax;
 	zmiennay++;
-	koszt=koszt+maxy*zmiennay;
-	zmiennax++;
 	}else if(maxx>maxy&&maxy==0) {
 		koszt=koszt+maxx*zmiennax;
 		zmiennay++;
@@ -73,14 +76,11 @@ for(int f=0;f<=6;f++) {
 	else {
 		koszt=koszt+maxy*zmiennay;
 		zmiennax++;
-		koszt=koszt+maxx*zmiennax;
-		zmiennay++;
 	}
 	
 
 	maxx=0;
 	maxy=0;
-	
 	}
 in.close();
 
@@ -89,3 +89,5 @@ System.out.println("minimalny koszt cięcia blachy wynosi "+koszt);
 	
 
 }
+
+	
